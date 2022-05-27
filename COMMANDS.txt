@@ -1,0 +1,22 @@
+antlr4:
+java org.antlr.v4.Tool
+grun:
+java org.antlr.v4.gui.TestRig 
+
+java org.antlr.v4.Tool -Dlanguage=Python3 COMBAT.g4
+
+import os
+import shutil
+dir = "player_library"
+dir2 = "players"
+
+
+	shutil.rmtree("players")
+ 	bot1 = "/" + str(ctx.player1.text)
+        bot2 = "/" + str(ctx.player2.text)
+        os.system("mkdir players")
+        duration = int(ctx.duration.text)
+        print("hi!")
+        shutil.copytree(dir + bot1, dir2 + bot1)
+        shutil.copytree(dir + bot2, dir2 + bot2)
+        os.system("python A3run_me.py")
